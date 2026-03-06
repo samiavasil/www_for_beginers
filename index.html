@@ -51,10 +51,21 @@
                 <a href="#">За нас</a>
                 <a href="#">Услуги</a>
                 <a href="#">Контакти</a>
+                <button id="showMsgBtn" style="margin-top:20px;">Покажи съобщение</button>
             </nav>
             <main>
                 <h1>Добре дошли!</h1>
                 <p>Това е централното съдържание.</p>
             </main>
+                <script>
+                    // Взимаме бутона и централния панел
+                    const btn = document.getElementById('showMsgBtn');
+                    const main = document.querySelector('main');
+
+                    // Когато бутонът се натисне, сменяме съдържанието
+                    btn.addEventListener('click', function() {
+                        main.innerHTML = '<h1>Съобщение!</h1><p>Това е динамично съдържание, показано с JavaScript.</p>';
+                    });
+                </script>
         </body>
-    </html>
+        </html>
