@@ -1,3 +1,18 @@
+.userCard {
+    border: 1px solid #ccc;
+    padding: 16px;
+    border-radius: 8px;
+    max-width: 300px;
+    background: #fff url('../assets/bg.png') no-repeat right bottom;
+    margin-top: 20px;
+}
+.userAvatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 8px;
+}
 body {
     margin: 0;
     display: flex;
