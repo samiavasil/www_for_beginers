@@ -61,8 +61,19 @@
                     <button type="submit">Изпрати</button>
                 </form>
                 <div id="result"></div>
+                <div id="app" style="margin-top:40px;"></div>
             </main>
                 <script>
+                                        // Примерен компонент: карта на потребител
+                                        function createUserCard(name) {
+                                            return `<section class="userCard" style="border:1px solid #ccc; padding:16px; border-radius:8px; max-width:300px; background:#fff; margin-top:20px;">
+                                                <h2>Потребител</h2>
+                                                <p>Име: ${name}</p>
+                                                <button onclick="alert('Профилът на ' + '${name}')">Покажи профил</button>
+                                            </section>`;
+                                        }
+                                        // Показваме примерен компонент
+                                        document.getElementById('app').innerHTML = createUserCard('Иван');
                     // Взимаме бутона и централния панел
                     const btn = document.getElementById('showMsgBtn');
                     const main = document.querySelector('main');
