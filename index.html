@@ -56,6 +56,11 @@
             <main>
                 <h1>Добре дошли!</h1>
                 <p>Това е централното съдържание.</p>
+                <form id="myForm" style="margin-top:30px;">
+                    <input type="text" id="name" placeholder="Име" required>
+                    <button type="submit">Изпрати</button>
+                </form>
+                <div id="result"></div>
             </main>
                 <script>
                     // Взимаме бутона и централния панел
@@ -66,6 +71,21 @@
                     btn.addEventListener('click', function() {
                         main.innerHTML = '<h1>Съобщение!</h1><p>Това е динамично съдържание, показано с JavaScript.</p>';
                     });
+
+                    // Формуляр с валидиране
+                    const form = document.getElementById('myForm');
+                    const result = document.getElementById('result');
+                    if(form) {
+                        form.addEventListener('submit', function(e) {
+                            e.preventDefault();
+                            const name = document.getElementById('name').value;
+                            if(name.length < 2) {
+                                result.innerHTML = 'Името трябва да е поне 2 символа!';
+                            } else {
+                                result.innerHTML = 'Успешно изпратено: ' + name;
+                            }
+                        });
+                    }
                 </script>
         </body>
         </html>
