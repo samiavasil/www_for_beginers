@@ -1,3 +1,12 @@
+function showAutomation() {
+    mainContent.innerHTML = `
+        <h2>Wokwi Автоматизация</h2>
+        <div style="color:red;font-weight:bold;">DEBUG: showAutomation() е извикан!</div>
+        <iframe src="https://wokwi.com/projects/456066086005498881" style="width:100%;height:70vh;border:1px solid #ccc;"></iframe>
+        <p style="margin-top:10px;">Това е интегриран Wokwi проект за демонстрация на автоматизация, разгърнат в цялото основно съдържание.</p>
+    `;
+    console.log('DEBUG: showAutomation() е извикан!');
+}
 // Навигация и динамични вюта
 const mainContent = document.getElementById('main-content');
 let users = JSON.parse(localStorage.getItem('users') || '[]');
@@ -76,6 +85,10 @@ document.getElementById('nav-home').addEventListener('click', function(e) { e.pr
 document.getElementById('nav-form').addEventListener('click', function(e) { e.preventDefault(); showForm(); });
 document.getElementById('nav-profile').addEventListener('click', function(e) { e.preventDefault(); showProfile(); });
 document.getElementById('nav-msg').addEventListener('click', function(e) { e.preventDefault(); showMsg(); });
+const navAutomation = document.getElementById('nav-automation');
+if (navAutomation) {
+    navAutomation.addEventListener('click', function(e) { e.preventDefault(); showAutomation(); });
+}
 // Добавяме нови менюта динамично
 const nav = document.querySelector('nav');
 function addNavLink(id, text, handler) {
